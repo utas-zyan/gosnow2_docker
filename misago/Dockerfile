@@ -26,7 +26,7 @@ WORKDIR /misago
 # Install requirements files
 RUN pip install --upgrade pip && \
     pip install -r requirements.txt
-RUN pip install --upgrade --no-dependencies Misago-0.40.0-py3-none-any.whl
+RUN pip install --upgrade Misago-0.40.0-py3-none-any.whl
 # Bootstrap plugins
 RUN ./.run bootstrap_plugins
 

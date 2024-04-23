@@ -26,8 +26,9 @@ WORKDIR /misago
 # Install requirements files
 RUN pip install --upgrade pip && \
     pip install -r requirements.txt
-RUN pip install --upgrade Misago-0.39.0.1-py3-none-any.whl
-# Bootstrap plugins
+
+RUN bash patch.sh _patch /usr/local/lib/python3.12/site-packages/
+    # Bootstrap plugins
 RUN ./.run bootstrap_plugins
 
 # Expose port 3031 from Docker
